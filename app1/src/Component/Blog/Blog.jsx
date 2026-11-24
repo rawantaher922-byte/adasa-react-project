@@ -51,6 +51,9 @@ export default function Blog({ posts = [] }) {
     setSearch('');
     setCategory('all');
     setPage(1);
+    if (window.location.search) {
+      window.history.pushState(null, '', window.location.pathname);
+    }
   }
 
   function changePage(newPage) {
@@ -185,11 +188,19 @@ export default function Blog({ posts = [] }) {
         ) : (
 
           <div className="text-center py-20">
-            <i className="fa-regular fa-face-frown text-5xl text-gray-400"></i>
+            <span className="inline-block text-5xl text-gray-400">
+              <i className="fa-regular fa-face-frown"></i>
+            </span>
 
             <h2 className="text-2xl font-bold my-4"> لا توجد مقالات </h2>
             <p className="text-gray-400 mb-6"> حاول تعديل البحث أو الفلتر. </p>
-            <button onClick={resetFilters} className="bg-orange-500 px-6 py-3 rounded-xl"> إعادة تعيين الفلاتر</button>
+            <button
+              type="button"
+              onClick={resetFilters}
+              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl font-bold transition-colors cursor-pointer"
+            >
+              إعادة تعيين الفلاتر
+            </button>
           </div>
 
         )}
@@ -199,7 +210,7 @@ export default function Blog({ posts = [] }) {
 
             <button disabled={page === 1} onClick={function () { changePage(page - 1); }}
               className="bg-[#141416] px-4 py-2 rounded-lg disabled:opacity-40">
-              <i class="fa-solid fa-arrow-right"></i>
+              <i className="fa-solid fa-arrow-right"></i>
             </button>
 
             {Array.from({ length: totalPages }, function (item, index) {
