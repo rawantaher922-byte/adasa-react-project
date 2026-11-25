@@ -1,152 +1,139 @@
-# Adasa Photography Blog (عدسة)
+# 📸 Adasa – Photography Blog
 
-A modern, responsive photography blog web application inspired by the **Adasa** photography platform. Built with **React 19**, **Vite**, **Tailwind CSS v4**, and **React Router DOM v7**.
+A modern, responsive photography blog built with **React 19, Vite, Tailwind CSS, and React Router**. Adasa is a platform where photography lovers can explore articles, discover photography techniques, and learn more about the art of photography.
 
----
+## ✨ Features
 
-## 🌟 Key Features
+### 🏠 Home Page
+- Hero section with a welcoming introduction and call-to-action buttons.
+- Quick statistics about articles, readers, categories, and authors.
+- Featured photography articles.
+- Photography categories section.
+- Latest articles section.
+- Newsletter subscription form.
 
-### 1. Home Page (`/`)
-- **Hero Section**:
-  - Geometric grid background pattern (`.hero-grid-pattern`) with warm radial ambient glow.
-  - Distinct badge: `● ● مرحباً بك في عدسة` ("Welcome to Adasa").
-  - Prominent headline: **"اكتشف فن التصوير الفوتوغرافي"** ("Discover the Art of Photography").
-  - Call-to-action buttons: "Explore Articles" (`استكشف المقالات ←`) and "Learn More" (`اعرف المزيد`).
-  - 4 quick statistics cards: `+50 Articles`, `+10k Readers`, `4 Categories`, and `6 Authors`.
-- **Featured Articles (مقالات مختارة)**:
-  - 3 featured articles displayed vertically in stacked horizontal cards.
-  - Image positioned on the right with a `★ مميز` ("Featured") badge.
-  - Content on the left including category badge, estimated reading time, article title, excerpt, author details, and an "Read Article ←" link.
-- **Explore by Category (استكشف حسب الموضوع)**:
-  - Responsive grid showcasing photography categories (Lighting, Portrait, Landscapes, Techniques, Gear) with article counts and direct filter routing.
-- **Latest Articles (أحدث المقالات)**:
-  - 3-column responsive grid displaying the most recently published photography guides.
-- **Newsletter Subscription**:
-  - Interactive email subscription box with instant confirmation and community trust metrics (+10,000 photographers).
+### 📝 Blog Page
+- Search articles by title or description.
+- Filter articles by category.
+- Grid and List view options.
+- Pagination with Previous and Next navigation.
+- Responsive article cards.
+- Empty state when no articles match the search.
 
-### 2. Blog Page (`/blog`)
-- **Live Search**:
-  - Real-time search bar that filters articles across titles and excerpts.
-- **Category Filtering**:
-  - Filter pills for quick categorization: *All Articles*, *Lighting*, *Portrait*, *Landscapes*, *Techniques*, and *Gear*.
-  - Supports deep linking via URL query parameters (e.g., `/blog?category=بورتريه`).
-- **View Modes**:
-  - **Grid View**: Clean 3-column responsive article card layout.
-  - **List View**: Horizontal card orientation with side-by-side thumbnail and summary.
-  - Seamless toggle button between Grid and List layouts.
-- **Pagination**:
-  - Configured for 6 articles per page.
-  - Interactive numbered page buttons with Previous (`السابق`) and Next (`التالي`) navigation and automatic smooth scrolling.
-- **Empty State**:
-  - Friendly icon with a reset filters button (`إعادة تعيين الفلاتر`) when no matching articles are found.
+### 📖 Article Details
+- Full article content with cover images.
+- Author information and publication date.
+- Table of contents for easy navigation.
+- Article tags and related articles.
+- Social sharing options (WhatsApp, LinkedIn, X, and Copy Link).
+- Reading time information.
 
-### 3. Article Details Page (`/blog/:id`)
-- **Cover Image & Hero Header**:
-  - Full-width hero banner with photographic backdrop, category pill, breadcrumb navigation, publication date, and author badge.
-- **Article Content**:
-  - Styled excerpt callout box with orange accent border.
-  - Section headings with custom camera icon markers (`[📷]`).
-  - Tags list (`#الوسوم`) linked to category filters.
-  - Social share bar (Copy Link, WhatsApp, LinkedIn, X/Twitter).
-  - Comprehensive author bio card with profile avatar and description.
-- **Sticky Sidebar (القائمة الجانبية)**:
-  - Positioned with `sticky top-24` for effortless access while reading.
-  - **In-page Table of Contents**: Numbered section index that smoothly scrolls to the corresponding header and updates the URL hash (`#section-X`).
-  - Active section visual highlight.
-  - Publication date and reading time summary card.
-  - Newsletter / Explore more callout card.
-- **Related Articles**:
-  - 3 curated articles from the same category at the bottom of the page.
+### ℹ️ About Page
+- Introduction to the Adasa platform.
+- Overview of its vision and mission.
 
-### 4. About Us Page (`/about`)
-- Vision, mission, and overview of the Adasa photography platform.
+### 🔗 Navigation & Footer
+- Responsive navigation bar.
+- Mobile-friendly menu.
+- Footer with useful links, categories, and social media icons.
 
-### 5. 404 Not Found Page (`*`)
-- Clean error page with home button redirection.
+### 🚫 404 Page
+- Custom Not Found page for invalid routes.
+- Button to return to the home page.
 
-### 6. Navigation & Footer
-- **Navbar**:
-  - Brand logo with Arabic typography, navigation pills for Home and Blog, search indicator, and mobile hamburger drawer.
-- **Footer**:
-  - 4-column layout matching design specifications with brand squircle icon, platform links, category shortcuts, social media buttons, newsletter input, and copyright notice.
+## 🛠️ Technologies Used
 
----
+| Technology | Description |
+|---|---|
+| React 19 | Building user interfaces |
+| Vite | Development server and build tool |
+| Tailwind CSS v4 | Styling and responsive design |
+| React Router DOM v7 | Page navigation and routing |
+| Font Awesome | Icons |
+| Tajawal Font | Arabic typography |
 
-## 🛠️ Technology Stack
-
-| Technology | Purpose |
-| :--- | :--- |
-| **React 19** | Modern UI library utilizing functional components and hooks (`useState`) |
-| **Vite** | Fast frontend build tool and dev server |
-| **Tailwind CSS v4** | Utility-first styling framework with custom patterns and dark palette |
-| **React Router DOM v7** | Declarative client-side routing and navigation |
-| **FontAwesome** | Vector icons for UI controls, categories, and social media |
-| **Tajawal Font** | Arabic Google Font for typography |
-
----
-
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```text
 app1/
 ├── public/
 ├── src/
-│   ├── assets/              # Logos and static media
+│   ├── assets/
 │   ├── Component/
-│   │   ├── About/           # About Us page component
-│   │   ├── Blog/            # Blog list, search, filters & pagination
-│   │   ├── Details/         # Single article page & sticky TOC sidebar
-│   │   ├── Footer/          # Responsive 4-column footer
-│   │   ├── Home/            # Landing page with hero & featured posts
-│   │   ├── Layout/          # Root layout wrapping Navbar & Footer
-│   │   ├── Navbar/          # Sticky navigation bar with mobile menu
-│   │   └── NotFound/        # 404 error page component
+│   │   ├── About/
+│   │   ├── Blog/
+│   │   ├── Details/
+│   │   ├── Footer/
+│   │   ├── Home/
+│   │   ├── Layout/
+│   │   ├── Navbar/
+│   │   └── NotFound/
 │   ├── data/
-│   │   └── posts.json       # 28 Photography articles in Arabic
-│   ├── App.jsx              # Router configuration
-│   ├── index.css            # Tailwind CSS directives & custom styles
-│   └── main.jsx             # React DOM entry point
+│   │   └── posts.json
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
 ├── package.json
 └── vite.config.js
 ```
 
----
-
 ## 🚀 Getting Started
 
-### Prerequisites
-- Node.js (v18.0.0 or higher recommended)
-- npm or yarn
+Follow these steps to run the project locally.
 
-### Installation & Run
+### 1. Clone the Repository
 
-1. Clone or navigate to the project directory:
-   ```bash
-   cd "Adasa project/app1"
-   ```
+```bash
+git clone YOUR_REPOSITORY_URL
+```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+### 2. Navigate to the Project Folder
 
-3. Start the local development server:
-   ```bash
-   npm run dev
-   ```
+```bash
+cd app1
+```
 
-4. Open your browser and navigate to:
-   ```text
-   http://localhost:5173
-   ```
+### 3. Install Dependencies
 
-### Building for Production
-To create an optimized production build:
+```bash
+npm install
+```
+
+### 4. Start the Development Server
+
+```bash
+npm run dev
+```
+
+### 5. Open in Browser
+
+Visit:
+
+```text
+http://localhost:5173
+```
+
+## 🏗️ Build for Production
+
+To create an optimized production build, run:
+
 ```bash
 npm run build
 ```
 
----
+To preview the production build locally:
 
-## 📝 License
-This project was developed for educational and portfolio purposes. All photography content and articles are localized in Arabic.
+```bash
+npm run preview
+```
+
+## 📌 Project Information
+
+- **Project Name:** Adasa Photography Blog
+- **Type:** Frontend Web Application
+- **Language:** Arabic
+- **Purpose:** Educational and Portfolio Project
+
+## 📄 License
+
+This project was created for educational and portfolio purposes.
