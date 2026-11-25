@@ -73,7 +73,10 @@ export default function Navbar() {
             </NavLink>
 
             <div className="px-3 py-2 rounded-lg text-sm font-medium flex items-center justify-between text-gray-300 cursor-default">
-              <span>من نحن</span>
+              <NavLink to="/about" className={({ isActive }) =>
+              `px-5 py-1.5 rounded-full text-sm font-medium transition-all ${isActive ? 'bg-orange-500 text-white shadow-sm font-semibold' : 'text-gray-300 hover:text-white'
+              }`
+            }> من نحن</NavLink>
               <i className="fa-solid fa-circle-info text-xs opacity-70"></i>
             </div>
 
