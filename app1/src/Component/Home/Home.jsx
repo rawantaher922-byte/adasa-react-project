@@ -195,8 +195,8 @@ export default function Home({ posts = [] }) {
           <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
             <Link to="/blog" className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm sm:text-base shadow-lg shadow-orange-500/25 transition-all active:scale-95"
             >
-              <i className="fa-solid fa-arrow-left text-xs"></i>
               <span>استكشف المقالات</span>
+            <i className="fa-solid fa-arrow-left text-xs"></i>
             </Link>
 
             <a href="#featured" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#141416]/90 hover:bg-stone-800 text-gray-300 hover:text-white border border-stone-800 text-sm sm:text-base font-medium transition-all"
